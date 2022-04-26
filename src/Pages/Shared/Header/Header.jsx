@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/home">
             <img src={logo} height={"30px"} alt="logo" />
           </Link>
           <button
@@ -24,14 +24,18 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to="home#services"
+                >
+                  Services
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link className="nav-link" to="/home#experts">
+                  Experts
+                </Link>
               </li>
             </ul>
             <div className="d-flex">
