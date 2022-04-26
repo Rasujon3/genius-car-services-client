@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -11,10 +11,6 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     console.log(email, password);
-  };
-
-  const navigateRegister = () => {
-    navigate("/register");
   };
 
   return (
@@ -67,9 +63,12 @@ const Login = () => {
       </form>
       <p>
         New to Genius Car?{" "}
-        <span className="text-danger" onClick={navigateRegister}>
+        <Link
+          className="text-danger pe-auto text-decoration-none"
+          to="/register"
+        >
           Please Register
-        </span>{" "}
+        </Link>{" "}
       </p>
     </div>
   );
