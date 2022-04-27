@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -17,6 +18,10 @@ const Register = () => {
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
+
+  if (loading || updating) {
+    return <Loading />;
+  }
 
   if (user) {
     // navigate(from, { replace: true });

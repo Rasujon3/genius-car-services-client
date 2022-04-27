@@ -1,7 +1,9 @@
 import React from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const ResetPassword = () => {
   const [sendPasswordResetEmail, sending, error] =
@@ -14,6 +16,10 @@ const ResetPassword = () => {
   //     navigate(from, { replace: true });
   //   }
 
+  if (sending) {
+    return <Loading />;
+  }
+
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
@@ -21,7 +27,12 @@ const ResetPassword = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
-    await sendPasswordResetEmail(email);
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent Email");
+    } else {
+      toast("Please enter your email address");
+    }
     // if (!error) {
     //   setTimeout(() => {
     //     navigate("/home");
