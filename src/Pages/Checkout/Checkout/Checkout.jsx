@@ -20,13 +20,15 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("http://localhost:5000/order", order).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast("Your order s booked!!!");
-        event.target.reset();
-      }
-    });
+    axios
+      .post("https://arcane-basin-75267.herokuapp.com/order", order)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          toast("Your order s booked!!!");
+          event.target.reset();
+        }
+      });
   };
   /*   const [user, setUser] = useState({
     name: "Akbar The freat",
