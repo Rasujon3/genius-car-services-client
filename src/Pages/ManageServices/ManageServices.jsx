@@ -22,14 +22,31 @@ const ManageServices = () => {
   return (
     <div className="w-50 mx-auto">
       <h2>Manage Your Services</h2>
-      {services.map((service) => (
-        <div key={service._id}>
-          <h5>
+      {/* {services.map((service) => ( */}
+      {/* <div key={service._id}> */}
+      {/* <h5>
             {service.name}{" "}
             <button onClick={() => handleDelete(service._id)}>X</button>
-          </h5>
-        </div>
-      ))}
+          </h5> */}
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Manage</th>
+          </tr>
+        </thead>
+        {services.map((service) => (
+          <tbody key={service._id}>
+            <tr>
+              <th scope="row">0</th>
+              <td>{service.name}</td>
+              <td onClick={() => handleDelete(service._id)}>❌</td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+      {/* // </div> */}
     </div>
   );
 };
