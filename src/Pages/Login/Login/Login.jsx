@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -30,9 +31,6 @@ const Login = () => {
       <h2 className="text-primary text-center mt-2">Please Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
           <input
             type="email"
             placeholder="Enter Email Address"
@@ -42,14 +40,8 @@ const Login = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
-          </label>
           <input
             type="password"
             placeholder="Password"
@@ -82,6 +74,7 @@ const Login = () => {
           Please Register
         </Link>{" "}
       </p>
+      <SocialLogin />
     </div>
   );
 };
