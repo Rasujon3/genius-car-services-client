@@ -54,6 +54,28 @@ const Header = () => {
                     About
                   </CustomLink>
                 </li>
+                {user && (
+                  <>
+                    <li className="nav-item">
+                      <CustomLink
+                        className="nav-link"
+                        aria-current="page"
+                        to="/addservice"
+                      >
+                        Add
+                      </CustomLink>
+                    </li>
+                    <li className="nav-item">
+                      <CustomLink
+                        className="nav-link"
+                        aria-current="page"
+                        to="/manage"
+                      >
+                        Manage
+                      </CustomLink>
+                    </li>
+                  </>
+                )}
                 {user ? (
                   <li className="nav-item">
                     <Link
