@@ -22,3 +22,4 @@
 5. requireAuth add
 6. header e conditional login logout add
 7. CustomLink add
+8. Dynamic title set with react helmet async

@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -38,6 +39,7 @@ const Login = () => {
 
   return (
     <div className="container w-50 mx-auto">
+      <PageTitle title="Login" />
       <h2 className="text-primary text-center mt-2">Please Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const ResetPassword = () => {
   const [sendPasswordResetEmail, sending, error] =
@@ -41,6 +42,7 @@ const ResetPassword = () => {
   };
   return (
     <div className="container w-50 mx-auto">
+      <PageTitle title="Reset Password" />
       <h2 className="text-primary text-center mt-2">Reset Password</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
