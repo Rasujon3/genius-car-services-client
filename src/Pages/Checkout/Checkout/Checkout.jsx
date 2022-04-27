@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import useServiceDetail from "../../../hooks/useServiceDetail";
+const axios = require("axios");
 
 const Checkout = () => {
   const [user] = useAuthState(auth);
@@ -18,6 +20,13 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
+    axios.post("http://localhost:5000/order", order).then((response) => {
+      const { data } = response;
+      if (data.insertedId) {
+        toast("Your order s booked!!!");
+        event.target.reset();
+      }
+    });
   };
   /*   const [user, setUser] = useState({
     name: "Akbar The freat",
@@ -65,6 +74,7 @@ const Checkout = () => {
           type="text"
           name="service"
           value={service.name}
+          readOnly
           placeholder="service"
           required
         />
