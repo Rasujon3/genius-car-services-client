@@ -1,11 +1,25 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../../firebase.init";
 import useServiceDetail from "../../../hooks/useServiceDetail";
 
 const Checkout = () => {
+  const [user] = useAuthState(auth);
   const { serviceId } = useParams();
   const [service] = useServiceDetail(serviceId);
-  const [user, setUser] = useState({
+
+  const handlePlaceOrder = (event) => {
+    event.preventDefault();
+    const order = {
+      email: user.email,
+      service: service.name,
+      serviceId: serviceId,
+      address: event.target.address.value,
+      phone: event.target.phone.value,
+    };
+  };
+  /*   const [user, setUser] = useState({
     name: "Akbar The freat",
     email: "akbar@miomo.com",
     address: "Tajmohol Road Md.pur",
@@ -19,16 +33,18 @@ const Checkout = () => {
     const newUser = { address: newAddress, ...rest };
     console.log(newUser);
     setUser(newUser);
-  };
+  }; */
   return (
     <div className="w-50 mx-auto">
       <h2>Please Order: {service.name}</h2>
-      <form action="">
+      <form onSubmit={handlePlaceOrder}>
         <input
           className="w-100 mb-2"
           type="text"
           name="name"
-          value={user.name}
+          value={user?.displayName}
+          readOnly
+          disabled
           placeholder="name"
           required
         />
@@ -37,7 +53,9 @@ const Checkout = () => {
           className="w-100 mb-2"
           type="email"
           name="email"
-          value={user.email}
+          value={user?.email}
+          readOnly
+          disabled
           placeholder="email"
           required
         />
@@ -55,8 +73,7 @@ const Checkout = () => {
           className="w-100 mb-2"
           type="text"
           name="address"
-          value={user.address}
-          onChange={handleAddressChange}
+          autoComplete="off"
           placeholder="address"
           required
         />
@@ -65,7 +82,6 @@ const Checkout = () => {
           className="w-100 mb-2"
           type="number"
           name="phone"
-          value={user.phone}
           placeholder="phone"
           required
         />
