@@ -21,11 +21,7 @@ const Login = () => {
   }
 
   if (error) {
-    errorElement = (
-      <div>
-        <p className="text-danger">Error: {error?.message}</p>
-      </div>
-    );
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
   const handleSubmit = (event) => {
@@ -60,28 +56,30 @@ const Login = () => {
             id="exampleInputPassword1"
           />
         </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
+        <button
+          type="submit"
+          className="btn btn-primary w-50 mx-auto d-block mb-2"
+        >
+          Login
         </button>
       </form>
       <span className="text-center">{errorElement}</span>
       <p>
         New to Genius Car?{" "}
         <Link
-          className="text-danger pe-auto text-decoration-none"
+          className="text-primary pe-auto text-decoration-none"
           to="/register"
         >
           Please Register
+        </Link>{" "}
+      </p>
+      <p>
+        Forget Password?{" "}
+        <Link
+          className="text-primary pe-auto text-decoration-none"
+          to="/resetpassword"
+        >
+          Reset Password
         </Link>{" "}
       </p>
 

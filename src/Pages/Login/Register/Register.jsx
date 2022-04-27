@@ -35,12 +35,17 @@ const Register = () => {
           placeholder="Password"
           required
         />
-
-        <input type="submit" value="Register" />
+        <input type="checkbox" name="terms" id="terms" />
+        <label htmlFor="terms">Accept Genius Car Terms & Conditions</label>
+        <input
+          className="w-50 mx-auto btn btn-primary mt-2"
+          type="submit"
+          value="Register"
+        />
       </form>
       <p>
         Already have an account?{" "}
-        <Link className="text-danger pe-auto text-decoration-none" to="/login">
+        <Link className="text-primary pe-auto text-decoration-none" to="/login">
           Please Login
         </Link>{" "}
       </p>
