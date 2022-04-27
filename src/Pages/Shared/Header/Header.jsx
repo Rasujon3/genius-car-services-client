@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import logo from "../../../images/logo.png";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -28,26 +29,30 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link
+                <CustomLink
                   className="nav-link"
                   aria-current="page"
                   to="home#services"
                 >
                   Services
-                </Link>
+                </CustomLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/home#experts">
+                <CustomLink className="nav-link" to="/home#experts">
                   Experts
-                </Link>
+                </CustomLink>
               </li>
             </ul>
             <div className="d-flex">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/about">
+                  <CustomLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/about"
+                  >
                     About
-                  </Link>
+                  </CustomLink>
                 </li>
                 {user ? (
                   <li className="nav-item">
@@ -61,9 +66,9 @@ const Header = () => {
                   </li>
                 ) : (
                   <li className="nav-item">
-                    <Link className="nav-link" to="/login">
+                    <CustomLink className="nav-link" to="/login">
                       Login
-                    </Link>
+                    </CustomLink>
                   </li>
                 )}
               </ul>
