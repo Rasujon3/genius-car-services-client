@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -11,7 +11,7 @@ const Login = () => {
   const location = useLocation();
   let errorElement;
 
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/home";
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
