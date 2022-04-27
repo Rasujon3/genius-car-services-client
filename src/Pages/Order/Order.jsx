@@ -33,8 +33,28 @@ const Order = () => {
     getOrders();
   }, [user]);
   return (
-    <div>
-      <h2>Your Orders: {orders.length}</h2>
+    <div className="w-50 mx-auto">
+      <h2 className="text-primary text-center">Your Orders</h2>
+
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Service Name</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        {orders.map((order) => (
+          <tbody key={order._id}>
+            <tr>
+              <th scope="row">0</th>
+              <td>{order.service}</td>
+              <td>{order.phone}</td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+      {/* // </div> */}
     </div>
   );
 };
