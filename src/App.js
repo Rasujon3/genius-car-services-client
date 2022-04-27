@@ -13,6 +13,7 @@ import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import ResetPassword from "./Pages/Login/ResetPassword/ResetPassword";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddService from "./Pages/AddService/AddService";
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
           element={
             <RequireAuth>
               <Checkout />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/addservice"
+          element={
+            <RequireAuth>
+              <AddService />
             </RequireAuth>
           }
         />

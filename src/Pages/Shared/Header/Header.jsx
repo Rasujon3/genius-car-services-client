@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div className="container-fluid">
+        <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} height={"30px"} alt="logo" />
           </Link>
