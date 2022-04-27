@@ -9,6 +9,7 @@ const Login = () => {
   const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
+  let errorElement;
 
   let from = location.state?.from?.pathname || "/";
 
@@ -17,6 +18,14 @@ const Login = () => {
 
   if (user) {
     navigate(from, { replace: true });
+  }
+
+  if (error) {
+    errorElement = (
+      <div>
+        <p className="text-danger">Error: {error?.message}</p>
+      </div>
+    );
   }
 
   const handleSubmit = (event) => {
@@ -65,6 +74,7 @@ const Login = () => {
           Submit
         </button>
       </form>
+      <span className="text-center">{errorElement}</span>
       <p>
         New to Genius Car?{" "}
         <Link
@@ -74,6 +84,7 @@ const Login = () => {
           Please Register
         </Link>{" "}
       </p>
+
       <SocialLogin />
     </div>
   );
