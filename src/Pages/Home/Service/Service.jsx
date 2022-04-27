@@ -5,8 +5,8 @@ import "./Service.css";
 const Service = ({ service }) => {
   const { id, name, img, description, price } = service;
   const navigate = useNavigate();
-  /*  const navigateToServiceDetail = (id) => {
-    navigate(`service/${id}`);
+  /* const navigateToServiceDetail = (id) => {
+    navigate(`/service/${id}`);
   }; */
   return (
     <div className="service">
@@ -18,7 +18,7 @@ const Service = ({ service }) => {
       </p>
       <button
         // onClick={() => navigateToServiceDetail(id)}
-        onClick={() => navigate(`service/${id}`)}
+        onClick={() => navigate(`/service/${id}`)}
         className="btn btn-primary"
       >
         Book: {name}
