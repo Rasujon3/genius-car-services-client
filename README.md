@@ -2,24 +2,30 @@
 
 ## Client Link: [https://genius-car-services-client.web.app/]
 
-- Client & server alada alada vabe krte hobe;
-- Github e one account kre rakhte hobe
-- Mongo te new project khule kaj krte hobe
-
-1. Module – 60 - Done
-2. Module – 61 - Done
-3. Module – 62 - Done
-4. Module – 63.5 (1,2,3)
-5. Module – 66
-6. Module – 68
+[https://genius-car-services-client.web.app/](https://genius-car-services-client.web.app/)
 
 ---
 
-1. Firebase setup
-2. Router setup
-3. Components banabo
-4. Login & reg add
-5. requireAuth add
-6. header e conditional login logout add
-7. CustomLink add
-8. Dynamic title set with react helmet async
+# Short Description
+
+### This website is mainly a Car service expert booking website. User can choose his desire expert for his service. Without login, user can't booking experts. User can login with Facebook, github, google & twitter. User also register with email and password. Also implement CRUD operation in this project.
+
+## Project features and functionality
+
+- Using Email Password login & registration system in this project.
+- Also using Google,Facebook & Github login & registration system in this project.
+- Users can book experts for their desire services.
+- Without login, user can't book their expert.
+- Users also can add expert and can delete his added experts.
+- Users also can see his order & can delete his order as well.
+- Using Local Storage to store & get accesstoken.
+
+## List of Technologies (Frameworks, libraries)
+
+- Using Bootstrap 5 & Row CSS for Responsive Design.
+- Using Express JS for server side.
+- Using MongoDB database for CRUD operation.
+- Using Firebase for authentication & hosting.
+- Using React-Firebase-Hooks for implement full authentication system.
+- Using React-Router-DOM for routing.
+- Using React-Toastify for showing simple Toast message in this website.
