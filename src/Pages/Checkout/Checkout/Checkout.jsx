@@ -21,7 +21,7 @@ const Checkout = () => {
       phone: event.target.phone.value,
     };
     axios
-      .post("https://arcane-basin-75267.herokuapp.com/order", order)
+      .post("https://genious-car-services-server.onrender.com/order", order)
       .then((response) => {
         const { data } = response;
         if (data.insertedId) {

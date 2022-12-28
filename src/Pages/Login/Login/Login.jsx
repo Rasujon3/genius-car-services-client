@@ -37,7 +37,7 @@ const Login = () => {
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
     const { data } = await axios.post(
-      "https://arcane-basin-75267.herokuapp.com/login",
+      "https://genious-car-services-server.onrender.com/login",
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);

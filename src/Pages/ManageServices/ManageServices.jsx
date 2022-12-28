@@ -7,7 +7,7 @@ const ManageServices = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `https://arcane-basin-75267.herokuapp.com/service/${id}`;
+      const url = `https://genious-car-services-server.onrender.com/service/${id}`;
       fetch(url, {
         method: "DELETE",
       })
